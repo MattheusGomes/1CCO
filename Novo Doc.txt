@@ -1,0 +1,10 @@
+oi :)
+
+
+git config --global user.name
+
+
+entrar na pagina
+
+cd nomedapasta
+

@@ -1,0 +1,20 @@
+ oi :)
+git config --global user.name //mostra o usuario logado
+git config --global --unset user.name// desloga o usuario
+git config --global --unset user.name// retira o email
+
+git config --global 
+git config --global user.name
+
+
+verificar credenciais do wind
+
+entrar na pagina
+
+cd nomedapasta
+
+git commit - m ""
+
+git push
+
+gerar token

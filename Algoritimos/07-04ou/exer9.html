@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentação</title>
+</head>
+<body>
+    
+
+    <select  id="alimento">
+
+
+        <option value="1">Carne bovina</option>
+        <option value="2">Soja</option>
+        <option value="3">Carne suína</option>
+        <option value="4">Legumes</option>
+        <option value="5">Carne de peixe</option>
+        <option value="6">Frutas</option>
+        <option value="7">Ovos</option>
+    
+    
+    </select>
+<br><br>
+    <button onclick="ali()">Tipo de alimentação</button>
+
+</body>
+</html>
+
+    <script>
+
+        function ali(){
+
+            var a = alimento.value;
+
+
+            if(a == 1 || a == 3 || a == 5 || a == 7 ){
+                alert("Você não pode ser Vegano")
+
+                if(a == 7 ){
+                    alert("Você pode ser Vegetariano")
+                }
+
+            }else if(a == 2 || a == 4 || a == 6){
+                alert("Você pode ser Vegano")
+            
+                if(a == 2 || a == 4 || a == 6 || a == 7){
+                alert("Você pode ser Vegetariano")
+                 }
+
+
+            } 
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+

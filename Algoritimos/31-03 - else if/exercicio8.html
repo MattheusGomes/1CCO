@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrição</title>
+</head>
+
+<body>
+
+    <h1>Eu deveria ter feito nutução</h1>
+
+    <b>Insira quanto pães você comeu</b>
+    <input type="text" id="pao">
+    <br>
+    <b>Insira a quantidade de bolachas recheadas consumidas por dia</b>
+    <input type="text" id="bolach">
+
+    <br>
+    <b>Insira a quantidade de copos de achocolatado consumidos por dia</b>
+
+    <input type="text" id="choco">
+<br><br>
+    <button onclick="verificar()">Verificar calorias</button>
+
+    <br>
+    <div id="apresent"></div>
+</body>
+
+</html>
+
+<script>
+/*  
+Teste de mesa - 
+
+pão = 50 calorias, 
+bolacha =  80 
+ achocolatado = 70
+
+
+primeira condição - 
+
+
+
+
+0 pães - 0
+1 bolacha - 80
+1 achocolatado - 70
+total = 300
+
+
+
+
+segunda condição -
+
+3 pães - 150
+1 bolacha - 80
+1 achocolatado - 70
+total = 300
+
+
+terceira condição-
+1 pao = 50
+2 bolacha = 160  
+3 achocolatado = 210
+total = 420 */
+
+    function verificar(){
+
+        var p = pao.value;
+        var b = bolach.value;
+        var c = choco.value;
+
+        var calculo = (p * 50) + (b * 80) + (c * 70);
+
+        if(calculo < 200){
+
+            apresent.innerHTML = "Parabéns, vai sair em forma da quarentena!";
+            
+        }else if(calculo <= 400){
+            apresent.innerHTML = "Cuidado, vai ficar mais "+"fofinho(a)"+" após quarentena!";
+            
+        }else{
+            
+            apresent.innerHTML = "Bom, acho que muitos não vão te reconhecer após a quarentena";
+
+        }
+
+    }
+
+</script>

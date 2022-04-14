@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão</title>
+</head>
+
+<body>
+
+
+    <h1>Cartão fidelidade</h1>
+
+    <b>Insira a quantidade de passagens que voce deseja comprar</b>
+    <input type="text" name="" id="pass">
+
+    <button onclick="comp()">Comprar</button>
+    <br><br>
+    <div id="apr"></div>
+
+</body>
+
+</html>
+
+
+<script>
+    function comp() {
+        var passa = pass.value;
+        var valor = 0;
+        var desc = 0;
+        var total = 0;
+
+        if (passa >= 8 && passa <= 50) {
+
+
+            valor = 4.40 * passa;
+
+            if (passa >= 8 && passa <= 19) {
+
+                desc = valor * 0.03;
+                total = valor - desc;
+
+            } else if (passa >= 20 && pass <= 49) {
+
+                desc = valor * 0.05;
+
+                total = valor - desc;
+
+            } else if (passa == 50) {
+
+                desc = valor * 0.07;
+                total = valor - desc;
+
+                apr.innerHTML = 'Total a pagar: ' + total;
+
+            }
+
+
+
+
+
+
+
+        } else {
+            alert("Quantidade inválida para o Fidelidade!");
+        }
+
+
+
+
+
+
+    }
+</script>

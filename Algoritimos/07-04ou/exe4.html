@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcelas</title>
+</head>
+<body>
+    
+    <select id="valor">
+
+        <option value="1">Dinheiro</option>
+        <option value="2">Cartão de débito</option>
+        <option value="3">Cartão de crédito</option>
+        <option value="4">Boleto</option>
+
+    </select>
+
+    <br><br>
+    <button onclick="compra()">Analisar compra</button>
+
+
+</body>
+</html>
+
+<script>
+
+    function compra(){
+        var op =  valor.value;
+
+        if(op == 1 || op == 2){
+            alert("Você terá que pagar a vista");
+
+        }else if(op == 3 || op == 4){
+            alert("Pagamento poderá ser parcelado");
+        }
+
+
+    }
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+

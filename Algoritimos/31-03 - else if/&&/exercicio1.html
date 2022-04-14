@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+</head>
+<body>
+    
+    <b>Insira a temperatura atual</b>
+    <input type="text" id="temp">
+
+    <br><br>
+    <button onclick="situa()">Ver Situação</button>
+    <br><br>
+
+    
+</body>
+</html>
+
+<script>
+
+    function situa(){
+
+        tempera = temp.value;
+
+        if (tempera >= 21 && tempera <= 24){
+
+            alert("Temperatura confortavel :)");
+
+        }else{
+            alert("Temperatura DESCONFORTAVEL:(");
+        }
+
+
+    }
+
+
+
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas</title>
+</head>
+
+<body>
+
+    <h1>Análise contas</h1>
+
+    <b>Insira o seu nome</b>
+    <br><input type="text" id="nome">
+    <br>
+    <b>Insira o seu saldo</b>
+    <br><input type="text" id="sald">
+    <br><br>
+    <button onclick="calc()">Verificar Conta</button>
+    <br><br>
+
+    <div id="apresent"></div>
+</body>
+
+</html>
+
+<script>
+    function calc() {
+
+        var n = nome.value;
+        var s = sald.value;
+
+        if(s > 5000){
+
+            apresent.innerHTML = "Com o saldo de R$"+ s +" o cliente "+n+" TEM PERFIL DE INVESTIDOR";
+            
+        }else if( s > 2000){
+            
+            apresent.innerHTML = "Com o saldo de R$"+ s +" o cliente "+n+" está com saldo ACIMA DA MÉDIA";
+            
+        }else if(s > 0){
+            
+            apresent.innerHTML = "Com o saldo de R$"+ s +" o cliente "+n+" está com saldo NORMAL";
+        }else {
+            
+            apresent.innerHTML = "Com o saldo de R$"+ s +" o cliente "+n+"está com saldo devedor";
+        }
+
+
+    }
+
+
+
+</script>

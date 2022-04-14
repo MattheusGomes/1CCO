@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital</title>
+</head>
+
+
+<body>
+
+    <select id="sel" onchange="alterar()">
+
+        <option value="0">--Selecione--</option>
+        <option value="1">SP – Capital</option>
+        <option value="2">SP – Interior</option>
+        <option value="3">Outros Estados</option>
+
+    </select>
+
+    <br><br>
+    <div id="apresentar"></div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    function alterar() {
+
+        var selec = sel.value;
+
+        if (selec == 0) {
+
+            apresentar.innerHTML = ' ';
+            alert("Por favor escolher uma opção");
+
+        } else {
+
+            if (selec == 1) {
+
+                apresentar.innerHTML =
+                    '<h3> Os nascidos nesta cidade são Paulistanos </h3><br> <img style="height: 500px" src="https://letsimage.s3.amazonaws.com/letsbook/211/destinos/2/1.jpg">';
+
+            }
+            if (selec == 2) {
+
+                apresentar.innerHTML =
+                    '<h3> Os nascidos nesta cidade são Paulistas </h3><br> <img style="height: 500px" src="https://guiaviajarmelhor.com.br/wp-content/uploads/2021/03/interior-sp-1.jpg">';
+            }
+            if (selec == 3) {
+
+                apresentar.innerHTML =
+                    '<h3> Os nascidos neste lugar não são Paulistanos e nem Paulistas </h3><br> <img style="height: 500px" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/COSTA_DOS_CORAIS-TAMANDAR%C3%89%2C_LITOROL_SUL_DE_PERNAMBUCO.jpg">';
+            }
+
+        }
+
+
+    }
+</script>

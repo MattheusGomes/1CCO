@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <b>Insira o Login</b>
+    <br>
+    <input type="text" name="" id="login">
+    <br>
+    <b>Insira a senha</b>
+
+    <br>
+    <input type="text" name="" id="senha">
+    <br>
+    <b>Insira a informaçaõ</b>
+    <br>
+    <input type="text" name="" id="info">
+
+    <br><br>
+    <button onclick="aute()">Autenticar</button>
+    <br><br>
+    <div id="apr"></div>
+    <div id="tent"></div>
+</body>
+
+</html>
+
+<script>
+    var tenAut = 3;
+
+    var usuario = 1;
+    function aute() {
+        var l = login.value;
+        var s = senha.value;
+        var i = info.value;
+
+        if (usuario == 1) {
+
+            if (l == "ana" && s == "braga" && (i == 1960 || i == "louro josé")) {
+                apr.innerHTML = "Usuário autenticado";
+                tenAut = 3;
+                tent.innerHTML = " ";
+
+            } else {
+                tenAut--;
+                apr.innerHTML = "Falha na autenticação";
+                tent.innerHTML = "Você ainda tem " + tenAut + " tentativa(s)";
+
+                if (tenAut == 0) {
+
+                    tent += "Usuário BLOQUEADO! Procure seu gerente!";
+                    usuario--;
+                }
+
+            }
+        }else{
+            alert("Usuário BLOQUEADO!")
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+</script>

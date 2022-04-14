@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>passagem </h2>
+
+    <select id="tipo">
+
+        <option value="1">Comum</option>
+        <option value="2">Estudante</option>
+        <option value="3">Idoso/PNE</option>
+    </select>
+
+    <select name="" id="tipoPas">
+
+        <option value="1">Passagem única</option>
+        <option value="2">Passagem integração</option>
+
+
+    </select>
+
+    <button onclick="simular()">Simular preço</button>
+
+    <div id="apr"></div>
+
+</body>
+
+</html>
+
+<script>
+    function simular() {
+        /* preço = 4.40, integração = 5.90  */
+
+        var p = tipo.value;
+        var pT = tipoPas.value;
+        var calc = 0;
+
+        if (p == 1 && pT == 1) {
+
+            calc = 4.40;
+            apr.innerHTML = "Valor da passagem escolhida: R$" + calc;
+
+        } else if (p == 1 && pT == 2) {
+            apr.innerHTML = "Valor da passagem escolhida: R$" + calc;
+
+        } else if (p == 2 && pT == 1) {
+            calc = (4.40 * 0.5);
+            apr.innerHTML = "Valor da passagem escolhida: R$" + calc;
+        } else if (p == 2 && pT == 2) {
+
+            calc = (5.90 * 0.5);
+            apr.innerHTML = "Valor da passagem escolhida: R$" + calc;
+        } else if (p == 3 && pT == 1) {
+            calc = (4.40 * 0);
+            apr.innerHTML = "Valor da passagem escolhida: R$" + calc;
+
+        } else if (p == 3 && pT == 2) {
+
+            calc = (5.90 * 0);
+            apr.innerHTML = "Valor da passagem escolhida: R$" + calc;
+        }
+
+
+
+
+
+
+
+
+    }
+</script>

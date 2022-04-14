@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuvalu</title>
+</head>
+
+<body>
+
+
+    <h1>
+        Renda familiar mensal
+    </h1>
+
+    <b>Insira a renda familiar mensal</b>
+    <input type="text" id="rend">
+
+    <br><br>
+    <button onclick="renda()">Analisar Renda</button>
+
+    <div id="apresent"></div>
+
+</body>
+
+</html>
+
+<script>
+    function renda() {
+        var rendaM = rend.value;
+
+        if (rendaM >= 9500) {
+            apresent.innerHTML = "Classe A";
+        } else if (rendaM >= 2500) {
+            apresent.innerHTML = "Classe B";
+
+        } else if (rendaM > 900) {
+            apresent.innerHTML = "Classe C";
+
+        } else if (rendaM > 250) {
+            apresent.innerHTML = "Classe D";
+
+        } else {
+            apresent.innerHTML = "Classe E";
+
+        }
+
+
+    }
+</script>

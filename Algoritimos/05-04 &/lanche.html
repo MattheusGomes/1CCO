@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegano</title>
+</head>
+
+<body>
+
+    <b>Café da manhã</b>
+    <select id="cafe">
+        
+        <option value="0">-- Selecione um valor --</option>
+        <option value="1">ovos</option>
+        <option value="2">leite de arroz</option>
+        <option value="3">bacon</option>
+    </select>
+
+    <br>
+
+    <b>Almoço</b>
+    <select id="almoco">
+
+        <option value="0">-- Selecione um valor --</option>
+        <option value="1">bife</option>
+        <option value="2">hamburger de soja</option>
+        <option value="3">frango grelhado</option>
+
+    </select>
+    <br>
+
+    <b>Janta</b>
+    <select id="janta">
+        <option value="0">-- Selecione um valor --</option>
+        <option value="1">picanha de soja</option>
+        <option value="2">cupim</option>
+        <option value="3">coração</option>
+
+    </select>
+    <br><br>
+    <button onclick="veg()">Sou vegano</button>
+
+
+</body>
+
+</html>
+
+<script>
+    function veg() {
+        var caf = cafe.value;
+        var alm = almoco.value;
+        var jt = janta.value;
+
+        if (caf == 2 && alm == 2 && jt == 1) {
+            alert('Sim, você é vegano!')
+        } else {
+            alert('Não, você não é vegano')
+        }
+
+
+
+    }
+</script>

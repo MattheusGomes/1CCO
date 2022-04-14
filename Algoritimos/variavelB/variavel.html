@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <b>Insira a idade</b>
+    <input type="text" name="" id="idade">
+
+    <button onclick="veri()">Verificar</button>
+
+    <div id="msg">Pontos: 0</div>
+    <br><br>
+    <b>Já passou pela infancia: <div id="vl1"></div> </b>
+    <b>Já passou pela adolecencia: <div id="vl2"></div> </b>
+    <b>Já é idoso <div id="vl3"></div> </b>
+
+
+</body>
+
+</html>
+<script>
+    var pontos = 0;
+
+    function veri() {
+        var ifan = idade.value > 12;
+        var adol = idade.value > 18;
+        var ido = idade.value >= 65;
+
+
+        if (ifan) {
+            pontos += 10;
+            vl1.innerHTML = "Sim";
+            msg.innerHTML = "Pontos: "+ pontos; 
+        } else{
+            vl1.innerHTML = "Não";
+
+        } if (adol) {
+            pontos += 20
+            vl2.innerHTML = "Sim";
+            msg.innerHTML = "Pontos: "+ pontos;
+        } else if (ido) {
+            pontos += 50
+            vl3.innerHTML = "Sim";
+            msg.innerHTML = "Pontos: "+ pontos;
+        }
+
+
+
+
+
+
+    }
+</script>

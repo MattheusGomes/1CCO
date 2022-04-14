@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aluno</title>
+</head>
+
+<body>
+
+    <b>Insira a sua frequencia</b>
+    <input type="text" name="" id="freq">
+    <br>
+    <b>Insira sua nota</b>
+    <input type="text" name="" id="nota">
+
+    <button onclick="anali()">Analisar Aluno</button>
+    <br><br>
+    <div id="apr"></div>
+</body>
+
+</html>
+
+<script>
+    function anali() {
+        var nt = nota.value;
+        var fq = freq.value;
+
+        if (nt > 10 || nt < 0) {
+            alert("Onde já se viu nota <0 ou >10?!");
+            apr.innerHTML = " ";
+
+        } else if (fq > 100 || fq < 0) {
+            alert("Onde já se viu frequência <0 ou >100?!");
+            apr.innerHTML = " ";
+
+        } else if (nt > 0 || nt < 6) {
+
+            apr.innerHTML = "<br> Aluno ficou abaixo da média";
+            
+            if (fq >= 75) {
+
+                apr.innerHTML += "<br> Aluno aprovado por frequência";
+            } else {
+
+                apr.innerHTML += "<br> Aluno reprovado por frequência";
+            }
+
+
+        } else if (nt >= 6 || nt <= 8) {
+
+            
+            if (fq >= 75) {
+                
+                apr.innerHTML = "<br> Aluno ficou na média";
+                apr.innerHTML += "<br> Aluno aprovado por frequência";
+            } else {
+
+                apr.innerHTML += "<br> Aluno reprovado por frequência";
+            }
+
+        } else if (nt > 8 || nt <= 10) {
+
+            
+            if (fq >= 75) {
+                
+                apr.innerHTML = "<br> Aluno acima da média";
+                apr.innerHTML += "<br> Aluno aprovado por frequência";
+            } else {
+
+                apr.innerHTML += "<br> Aluno reprovado por frequência";
+            }
+
+        }
+
+
+
+
+    }
+</script>

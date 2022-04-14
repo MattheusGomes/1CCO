@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros cabalísticos</title>
+</head>
+<body>
+
+
+    <h2 id="aprCont">Contador: 0</h2>
+    
+    <button onclick="contador()">Clique Aqui</button>
+
+    
+</body>
+</html>
+
+<script>
+
+    var cont = 0;
+    function contador(){
+        cont++;
+
+        aprCont.innerHTML = "Contador: "+cont;
+
+        if(cont == 3 || cont == 4 || cont == 7 || cont == 10 ){
+            alert("Você clicou "+cont+" vezes e Juliana gosta desse número!");
+        }
+
+
+
+    }
+
+</script>

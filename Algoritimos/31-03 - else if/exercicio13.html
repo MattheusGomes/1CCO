@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofre</title>
+</head>
+
+<body>
+
+    <h1>Cofre</h1>
+
+
+    <button onclick="g5()">Guardar 5</button>
+    <button onclick="g10()">Gastar 10</button>
+
+    <div id="apresT">Valor total: R$0,00 </div>
+
+    <div id="apres"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    var total = 0;
+
+
+    function g5() {
+
+        var gua5 = 5.00;
+        total += gua5;
+        apresT.innerHTML = "Valor total: R$" + total;
+
+        if (total > 100) {
+
+
+            apres.innerHTML = "<b>#Ostentação </b>"
+            apresT.innerHTML = "Valor total: R$" + total;
+
+        } else if (total >= 0) {
+            apres.innerHTML = '<span style="color: blue;">Finanças OK!</span>'
+            apresT.innerHTML = "Valor total: R$" + total;
+
+        }else if(total > -20){
+            apres.innerHTML = '<span style="color: red;">Finanças em perigo!</span>'
+            apresT.innerHTML = "Valor total: R$" + total;
+        }
+    }
+
+    function g10() {
+
+        var gas10 = 10.00;
+        total -= gas10;
+
+        var neg = -20;
+
+        apresT.innerHTML = "Valor total: R$" + total;
+
+        if (total <= -20) {
+
+            apres.innerHTML = "Quase um Corinthians!"
+            apresT.innerHTML = "Valor total: R$" + total;
+        } else if (total < 0) {
+
+            apres.innerHTML = '<span style="color: red;">Finanças em perigo!</span>'
+            apresT.innerHTML = "Valor total: R$" + total;
+        }
+    }
+</script>

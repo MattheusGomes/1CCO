@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura</title>
+</head>
+
+
+<body>
+
+
+    <div id="dados1">
+
+        <h2>Altura</h2>
+        <b>Insira a altura inicial para piloto </b>
+        <input type="text" id="iniPilo">
+        <br>
+
+        <b>Insira a altura limite para piloto </b>
+        <input type="text" id="limPilo">
+
+        <br><br>
+
+        <b>Insira a altura inicial para jogador de basquete</b>
+        <input type="text" id="iniJoga">
+        <br>
+
+        <b>Insira a altura limite para jogador de basquete </b>
+        <input type="text" id="limJoga">
+        <br><br>
+        <button onclick="sele()">Selecionar</button>
+    </div>
+
+    <div id="dados2" style="display: none;">
+
+        <h2>Processo de Seleção de novos atletas</h2>
+
+
+        <h4 id="sub1"></h4>
+        <h4 id="sub2"></h4>
+
+        <b>Insira o nome do candidato</b>
+        <input type="text" id="nomeC">
+        <br>
+        <b>Insira a atura do candidato</b>
+        <input type="text" id="alturaC">
+
+        <br><br>
+
+        <select id="modalidade">
+            <option value="0">--Selecionar--</option>
+            <option value="1">Jogador de basquete</option>
+            <option value="2">Piloto</option>
+        </select>
+        <br><br>
+        <button onclick="sele()">Cadastrar</button>
+        <br><br>
+        <div id="msg"></div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    var alturaMinP = 0;
+    var alturaMaxP = 0;
+    var alturaMinJ = 0;
+    var alturaMaxJ = 0;
+
+    function sele() {
+        alturaMinP = iniPilo.value;
+        alturaMaxP = limPilo.value;
+        alturaMinJ = iniJoga.value;
+        alturaMaxJ = limJoga.value;
+
+
+        var mod = modalidade.value;
+        var nome = nomeC.value;
+        var altura = alturaC.value;
+
+        if (alturaMinP > 1 && alturaMaxP > alturaMinP) {
+
+            if (alturaMinJ > 1.5 && alturaMaxJ > alturaMinJ) {
+
+                dados1.style.display = "none";
+                dados2.style.display = "block";
+
+                sub1.innerHTML = "Critério de Seleção de piloto – altura entre " + alturaMinP + " até " + alturaMaxP;
+                sub2.innerHTML = "Critério de Seleção de jogador de basquete – altura entre " + alturaMinJ + " até " +
+                    alturaMaxJ;
+
+            } else {
+
+                alert("Intervalo de altura do JOGADOR invalida");
+            }
+
+        } else {
+            alert("Intervalo de altura do PILOTO invalida");
+        }
+
+
+        if (mod == 1) {
+
+            if (altura >= alturaMinJ && altura <= alturaMaxJ) {
+                msg.innerHTML += "<br>O candidato " + nome + " com altura de " + altura +
+                    " participará do processo de seleção de jogador";
+
+            } else {
+                msg.innerHTML += "<br>Infelizmente o candidato " + nome + " com altura de " + altura +
+                    " não atende os requisitos";
+            }
+
+        } else if (mod == 2) {
+
+            if (altura >= alturaMinP && altura <= alturaMaxP) {
+                msg.innerHTML += "<br>O candidato " + nome + " com altura de " + altura +
+                    " participará do processo de seleção de piloto";
+            } else {
+                msg.innerHTML += "<br>Infelizmente o candidato " + nome + " com altura de " + altura +
+                    " não atende os requisitos";
+            }
+        } else {
+            msg.innerHTML = " ";
+        }
+
+
+
+    }
+</script>
+
+<!-- :root {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --color_green: #73e67d;
+    --color_red: #f56b76;
+    --color_yellow: #ecea44;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 5%;
+}
+
+#finaliza:hover {
+    color: black;
+
+}
+
+.corpoPagina {
+    display: flex;
+    flex-direction: column;
+}
+
+#sobre {
+    color: var(--color_red)
+}
+
+#simulador {
+    color: #264413;
+}
+
+#contato {
+    color: #6e5d2d
+}
+
+.header {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    justify-content: space-between;
+    padding: 2vh;
+}
+
+.elementosNav li {
+    font-size: 20px;
+}
+
+#ultimo {
+    margin: 0;
+}
+
+.alinhamento {
+    border-bottom: 1px solid rgb(107, 107, 107);
+    width: 50%;
+    margin: 20px;
+
+}
+
+.elementosNav {
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.login img {
+    width: 20px;
+}
+
+#imagemEntrar {
+    justify-content: right;
+}
+
+.navBar {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.liNav {
+    margin-right: 50px;
+
+}
+
+a {
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+}
+
+a:hover {
+    color: var(--color_green);
+    transition: 500ms;
+}
+
+
+.content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #94D57B, #C1DA6C);
+}
+
+.alinhamento {
+    width: 60%;
+    border-bottom: 2px solid #b1b1b1;
+    margin: 15px;
+}
+
+.content .container {
+    border-radius: 20px;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    margin-bottom: 5vh;
+}
+
+.content .container .cadTxt{
+    font-size: 20px;
+    margin: 5px;
+    
+}
+
+.content .container input {
+    width: 35%;
+    padding: 10px;
+    border: none;
+    background-color: rgb(218, 218, 218);
+    border-radius: 25px;
+    margin-top: 10px;
+}
+
+.content .container button {
+    font-weight: bold;
+    font-size: 90%;
+    width: 25%;
+    height: 5vh;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--color_green);
+}
+
+.content .container select{
+
+    margin: 10px;
+
+}
+
+.content .container button:hover {
+    border: 1px solid black;
+    background-color: white;
+    transition: 300ms;
+}
+
+#planos {
+    padding: 5px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+} -->

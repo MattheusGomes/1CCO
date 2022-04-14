@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arroz</title>
+</head>
+
+<body>
+
+    <h2>Selecione o tipo de arroz</h2>
+    <select id="tipo">
+
+        <option value="0">--Selecionar--</option>
+        <option value="1">integral</option>
+        <option value="2">branco</option>
+    </select>
+
+    <br><br>
+    <b>Insira o tempo de cozimento em minutos</b>
+    <input type="text" id="tempo" placeholder="Tempo em minutos">
+    <br><br>
+    <b>Insira a quantidade de sal em gramas</b>
+    <input type="text" id="qtdSal" placeholder="Quantidade em gramas">
+    <br><br>
+    <button onclick="avl()">Avaliar arroz</button>
+
+    <br><br>
+    <div id="msg"></div>
+    <div id="apresent"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function avl() {
+
+        var tp = tipo.value;
+        var tempoC = tempo.value;
+        var quant = qtdSal.value;
+
+
+
+        if (tp == 1) {
+            /* integral */
+
+            if (tempoC > 20 || tempoC < 20 || quant > 15) {
+                msg.innerHTML = "Seu arroz não está perfeito";
+            } else {
+                msg.innerHTML = "Arroz perfeito";
+            }
+
+
+        } else if (tp == 2) {
+            /* branco */
+
+            if (tempoC > 10 || tempoC < 10 || quant > 10) {
+                msg.innerHTML = "Seu arroz não está perfeito";
+            } else {
+                msg.innerHTML = "Arroz perfeito";
+            }
+            
+            
+        }else{   
+            msg.innerHTML = "Escolha uma opção";
+        }
+
+
+
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+</head>
+<body>
+    
+    <b>Insira sua media</b>
+    <input type="text"  id="med">
+    <br><br>
+    <b>Insira sua frequencia</b>
+    <input type="text" id="freq">
+
+    <button onclick="veri()">Verificar</button>
+    <br><br>
+    <div id="msg"></div>
+
+
+</body>
+</html>
+
+
+<script>
+
+    function veri(){
+        var m = med.value > 5;
+        var f = freq.value > 14;
+        if(m && f){
+            
+            msg.innerHTML = "Parabéns, aprovado(a)!" 
+        }else if(m == false && f == true){
+            
+            msg.innerHTML = "Reprovado(a) por nota!" 
+        }else if(m == true && f == false){
+            msg.innerHTML = "Reprovado(a) por frequência!" 
+
+        }
+
+
+
+
+    }
+
+
+
+</script>

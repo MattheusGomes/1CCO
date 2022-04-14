@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19</title>
+</head>
+<body>
+    
+    <b>Insira sua renda</b>
+    <input type="text"  id="rendaI">
+    <br>
+    <b>Insira a renda familiar</b>
+    <input type="text" id="rendaF">
+<br><br>
+<button onclick="calcular()">Calcular</button>
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var rI = rendaI.value;
+        var rF = rendaF.value;
+
+        if(rI <= 2000 || rF <= 3000){
+            alert("Você terá direito ao auxílio");
+        }else{
+            alert("Sem direito ao auxílio");
+        }
+
+
+    }
+
+
+</script>

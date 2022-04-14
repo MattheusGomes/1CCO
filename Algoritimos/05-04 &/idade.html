@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salario</title>
+</head>
+
+<body>
+
+    <b> Insira a idade </b>
+    <input type="text" name="" id="idad">
+    <br>
+    <b>Insira o salario</b>
+    <input type="text" name="" id="sal">
+    <br><br>
+    <button onclick="cal()">Calcular</button>
+
+    <div id="apresent"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    function cal() {
+
+        var idade = idad.value;
+        var sala = sal.value;
+
+        if (idade < 18) {
+            if (sala < 2500) {
+                apresent.innerHTML = ' Menor de idade e liso';
+            } else {
+                apresent.innerHTML = 'Menor de idade e ostentação';
+            }
+        } else {
+
+            if (sala < 3500) {
+                apresent.innerHTML = 'Maior de idade e liso';
+            } else if(sala > 3500 && sala <=7000) {
+                apresent.innerHTML = 'Maior de idade e ostentação';
+            }else if(sala > 7000){
+                apresent.innerHTML = ' Maior de idade e mega ostentação';
+            }
+        }
+    }
+</script>

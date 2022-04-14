@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliques</title>
+</head>
+
+<body>
+
+    <h1>Cliques</h1>
+
+    <h3 id="contador">Você já clicou 0 vezes</h3>
+    <br><br>
+    <button onclick="aperta()">Clica neu</button>
+
+    <br><br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    var qtdClick = 0;
+
+    msg.innerHTML = "Dedo fraquinho, hein";
+
+    function aperta() {
+
+        qtdClick += 1;
+
+        contador.innerHTML = "Você já clicou " + qtdClick + " vezes";
+
+        if (qtdClick < 5) {
+            msg.innerHTML = "Dedo fraquinho, hein";
+        } else if (qtdClick >= 5 && qtdClick <= 10) {
+            msg.innerHTML = "Dedo bom, mano ";
+        } else if (qtdClick >= 11 && qtdClick <= 15) {
+            msg.innerHTML = "Gosta de clicar, hein!";
+        } else {
+            msg.innerHTML = "Eita dedo nervoso!";
+        }
+
+    }
+</script>

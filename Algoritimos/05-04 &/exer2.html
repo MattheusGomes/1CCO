@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Ajuda</h1>
+
+    <b>Insira a sua renda</b>
+    <input type="text" name="" id="rendaU">
+    <br>
+    
+        <b>Insira a sua renda familiar</b>
+        <input type="text" name="" id="rendaF">
+    
+    <br><br>
+    <button onclick="ajuda()">Verificar ajuda</button>
+
+</body>
+
+</html>
+
+<script>
+    function ajuda() {
+        var r = rendaU.value;
+        var rFam = rendaF.value;
+
+
+        if(r > 1050 && rFam > 2100 ){
+            alert("Você NÃO terá direito");
+        }else{
+            alert("Voce tem direito"); 
+        }x
+    }
+</script>

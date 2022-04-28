@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etanol</title>
+</head>
+
+<body>
+
+
+    <div id="tela1">
+
+
+        Entre com a quantidade de Etanol
+        <input type="text" name="" id="etanol">
+        <br><br>
+        Entre com a quantidade de gasolina
+        <input type="text" name="" id="gasol">
+
+        <br><br>
+
+        <button onclick="abrir()">Abrir o Posto</button>
+    </div>
+
+    <div id="tela2" style="display: none;">
+
+        Quantidade de combustível que foi vendido
+        <input type="text" name="" id="qtdComb">
+        <br><br>
+
+        <select name="" id="tipo">
+
+            <option value="0">--Selecionar--</option>
+            <option value="1">Etanol</option>
+            <option value="2">Gasolina</option>
+
+        </select>
+
+        <br><br>
+        <button onclick="registrar()">Registrar a Venda</button>
+        <button onclick="encerrar()">Encerrar o Turno</button>
+
+        <br><br>
+        <div id="msg"></div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    var e = 0;
+    var g = 0;
+    var ttG = 0;
+    var ttE = 0;
+    var qtdVenE = 0;
+    var qtdVenG = 0;
+
+    function abrir() {
+        e = Number(etanol.value);
+        g = Number(gasol.value);
+
+        if (e < 300) {
+            alert("ERRO - Com esse volume de Etanol não dá para abrir o posto");
+
+        } else if (e >= 300 && e <= 3000) {
+            alert("AVISO - Chame o reabastecimento de Etanol");
+
+            if (g < 200) {
+                alert("ERRO - Com esse volume de Gasolina não dá para abrir o posto");
+            } else if (g >= 200 && g <= 2000) {
+
+                alert("AVISO - Chame o reabastecimento de Gasolina");
+                ttG = g;
+                ttE = e;
+
+                tela1.style.display = "none";
+                tela2.style.display = "block";
+
+            } else if (g > 2000) {
+                ttG = g;
+                ttE = e;
+
+                tela1.style.display = "none";
+                tela2.style.display = "block";
+            }
+        } else if (e > 3000) {
+
+            if (g < 200) {
+                alert("ERRO - Com esse volume de Gasolina não dá para abrir o posto");
+            } else if (g >= 200 && g <= 2000) {
+                alert("AVISO - Chame o reabastecimento de Gasolina");
+                ttG = g;
+                ttE = e;
+
+                tela1.style.display = "none";
+                tela2.style.display = "block";
+            } else if (g > 2000) {
+                ttG = g;
+                ttE = e;
+
+                tela1.style.display = "none";
+                tela2.style.display = "block";
+            }
+
+        }
+    }
+
+    function registrar() {
+
+        var tp = tipo.value;
+        var qtdC = qtdComb.value;
+
+
+        if (tp == 0) {
+
+        } else if (tp == 1) {
+            /* etanol */
+
+
+            if (qtdC > e) {
+
+                alert("Valor indisponivel para venda, o valor disponivel é:" + e)
+
+            } else {
+
+                qtdVenE++;
+                e -= qtdC;
+                msg.innerHTML += "<br>Com a venda de " + qtdC + " de Etanol o saldo no tanque é de " + e;
+            }
+
+
+        } else if (tp == 2) {
+            /* gaso */
+
+            if (qtdC > g) {
+
+                alert("Valor indisponivel para venda, o valor disponivel é:" + g)
+
+            } else {
+
+                qtdVenG++;
+                g -= qtdC;
+                msg.innerHTML += "<br>Com a venda de " + qtdC + " de Gasolina o saldo no tanque é de " + g;
+            }
+        }
+
+
+
+
+    }
+
+    function encerrar() {
+
+        var vendaE = ttE - e;
+        var mediaE = vendaE / qtdVenE;
+
+        var vendaG = ttG - g;
+        var mediaG = vendaG / qtdVenG;
+
+
+        msg.innerHTML = "<h3>  Venda de Etanol </h3> Saldo de produto no tanque = " + e +
+            " <br> Volume total vendido = " + vendaE + "<br>  Quantidade de vendas =" + qtdVenE +
+            "<br> Média das vendas = " + mediaE.toFixed(1);
+
+        msg.innerHTML += "<br><h3>  Venda de Gasolina </h3> Saldo de produto no tanque = " + g +
+            " <br> Volume total vendido = " + vendaG + "<br>  Quantidade de vendas =" + qtdVenG +
+            "<br> Média das vendas = " + mediaG.toFixed(1);
+
+
+        if ((vendaG > 1000 && vendaE > 1500) || e < 300 || g < 300) {
+
+            msg.innerHTML += "<br>O turno hoje foi <b> BOM </b>"
+        } else {
+            msg.innerHTML += "<br>O turno hoje foi <b> Normal </b>"
+
+        }
+
+
+
+    }
+</script>

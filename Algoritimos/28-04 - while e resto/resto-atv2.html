@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saque</title>
+</head>
+
+<body>
+
+    <h2>
+        Caixa 24H
+    </h2>
+
+    Entre com o valor do saque
+    <br><br>
+    <input type="text" name="" id="sq">
+
+    <br><br>
+
+    <button onclick="verificar()">Solicitar saque</button>
+
+    <br><br>
+
+    <div id="msg"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    var valorDisponivel = 1000;
+
+    function verificar() {
+        var saq = Number(sq.value);
+
+        if (saq <= 0) {
+            alert("Não é possível sacar 0 ou menos, dãaaa!");
+        } else {
+
+            if (saq % 10 == 0 || saq % 50 == 0 || saq % 100 == 0) {
+
+                if (saq > valorDisponivel) {
+                    alert("Valor solicitado maior que o disponível na máquina");
+                } else {
+
+                    valorDisponivel -= saq;
+                    alert("Retire o dinheiro no local indicado");
+                }
+
+            } else {
+                alert("Valor não possível devido às notas disponíveis");
+            }
+        }
+    }
+
+</script>

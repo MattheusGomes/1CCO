@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>limitar</title>
+</head>
+
+<body>
+
+    Entre com um numero maior que 5
+    <br><br>
+    <input type="text" name="" id="num">
+    <br><br>
+    <button onclick="verificar()">Calcular</button>
+    <br><br>
+    <div id="msg"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    function verificar() {
+        var i = 5;
+        var valor = num.value;
+
+        while (i <= valor) {
+
+            msg.innerHTML += i + "<br>";
+            i++;
+        }
+
+    }
+</script>

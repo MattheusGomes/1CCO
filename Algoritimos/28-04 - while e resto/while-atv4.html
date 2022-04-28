@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros pares</title>
+</head>
+
+<body>
+
+    <h2>Numeros Pares</h2>
+    Entre com o valor inicial
+    <input type="text" name="" id="inic">
+    <br><br>
+    Entre com o valor Final
+    <input type="text" name="" id="fim">
+    <br><br>
+    <button onclick="verificar()">Verificar </button>
+    <br><br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function verificar() {
+
+        var i = Number(inic.value);
+        var f = Number(fim.value);
+
+        while (i <= f) {
+
+            if (i % 2 == 0) {
+
+                msg.innerHTML += i + "<br>"
+            }
+
+            i++;
+
+        }
+
+
+
+
+
+
+    }
+</script>

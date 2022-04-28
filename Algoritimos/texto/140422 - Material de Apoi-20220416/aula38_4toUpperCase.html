@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Vamos trabalhar com Textos???</h2>
+    Entre com uma frase: <input id="ipt_frase"> <br><br>
+    <button onclick="ver()">Ver</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    function ver() {
+        var ax_frase = ipt_frase.value;
+
+        // O .toUpperCase() retorna a frase em Letras Maiúsculas
+        // O UPPER CASE não altera o conteudo da variável, mas ele permite a atribuição disso a outra variável
+            div_msg.innerHTML = ax_frase.toUpperCase();
+            div_msg.innerHTML += "<br>" + ax_frase;
+    }
+</script>

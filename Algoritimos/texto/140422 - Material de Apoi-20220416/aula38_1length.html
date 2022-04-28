@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Vamos trabalhar com Textos???</h2>
+    Entre com uma frase: <input id="ipt_frase"> <br><br>
+    <button onclick="ver()">Ver</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function ver() {
+        var ax_frase = ipt_frase.value;
+        var ax_retorno = 0;
+
+        div_msg.innerHTML = ax_frase.length + " O .length mostra a quantidade de carcteres que uma variável possui <br>";
+        
+        div_msg.innerHTML += (ipt_frase.value).length +  ` Aqui eu mostro como pegar o length de uma variável de input <br> `;
+
+        // Eu posso utilizar o .length para fazer uma atribuição da quantidade de caracteres em uma outra variável 
+        ax_retorno = ax_frase.length;
+
+        div_msg.innerHTML += `<br> O Bianchi vai pagar ${ax_retorno * 1.50}`;
+
+        // Eu posso utilizar o .length para fazer operações lógicas 
+        if (ax_frase.length < 3){
+            alert('Preguiçoso')
+        }
+    }
+</script>

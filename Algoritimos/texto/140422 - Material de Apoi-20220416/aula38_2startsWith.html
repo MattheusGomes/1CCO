@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Vamos trabalhar com Textos???</h2>
+    Entre com uma frase: <input id="ipt_frase"> <br><br>
+    <button onclick="ver()">Ver</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    function ver() {
+        var ax_frase = ipt_frase.value;
+
+        // O .startsWith retorna true ou false se a variável começa com os caracteres especificados
+        if (ax_frase.startsWith('xpto')){
+            alert('Sim é uma URL')
+        }else {
+            alert('Arrume, pois não é URL')
+        }
+
+
+    }
+</script>

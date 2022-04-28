@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>senha nova</title>
+</head>
+
+<body>
+
+
+    <h3>Entre com uma senha</h3>
+    <input type="text" name="" id="senha" onkeyup="senhaForte()">
+    <br><br>
+    <div id="senhaNova"></div>
+
+</body>
+
+</html>
+
+<script>
+    var i = 0;
+
+    function senhaForte() {
+        var sn = senha.value;
+        var mdA = sn.indexOf('A');
+        var md = sn[mdA - 1] = '@';
+
+
+        senhaNova.innerHTML += mdA; 
+        senhaNova.innerHTML += md; 
+        senhaNova.innerHTML += sn; 
+
+
+/* 
+        senhaNova.innerHTML += `Onde está o 1ª "o"? ${sn.indexOf('A')} <br>`; */
+
+    }
+</script>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trajeto</title>
+</head>
+
+<body>
+
+    <h2>Trajeto</h2>
+
+    Entre com a quantidade de onibus necessaria para chegar
+    <input type="text" name="" id="onib">
+    <br><br>
+
+    Entre com a quantidade de trens necessarios para chegar
+    <input type="text" name="" id="trem">
+    <br><br>
+    Entre com a quantidade de metrôs necessarios para chegar
+    <input type="text" name="" id="metro">
+    <br><br>
+    <button onclick="trajeto()">#Partiu Trajeto</button>
+    <br><br>
+    <div id="msg"></div>
+
+   
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    function trajeto() {
+
+        var varOni = Number(onib.value);
+        var varTr = Number(trem.value);
+        var varMet = Number(metro.value);
+        g = 1;
+        r = 1;
+        b = 1;
+
+       
+        while (r <= varOni) {
+            msg.innerHTML += "<div style='color: rgb(254, 48, 48);'>Pegando o " + r + "º buzão<br></div>"
+            r++;
+        }
+        while (g <= varTr) {
+            msg.innerHTML += "    <div style='color: rgb(9, 245, 9);'>Pegando o " + g + "º trem<br></div>"
+            g++;
+        } 
+        while (b <= varMet) {
+            msg.innerHTML += "<div style='color: rgb(0, 238, 255);'>Pegando o " + b + "º metrô<br></div>"
+            b++;
+        }
+
+
+
+
+
+    }
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Números Primos</h2>
+
+    Entre com o numero inicial
+    <input type="text" name="" id="iptIni">
+    <br><br>
+    Entre com o numero final
+    <input type="text" name="" id="iptFinal">
+    <br><br>
+    <button onclick="calcular()">Verificar</button>
+
+    <br><br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+
+        var i = Number(iptIni.value);
+        var f = Number(iptFinal.value);
+        var qtdNumDiv = 0;
+        var inicio = i;
+        var numInter = 0;
+
+
+        if (i > f) {
+            alert("O primeiro numero não pode ser maior que o segundo");
+
+        } else if (i < 0 || f < 0) {
+            alert("Os numeros não podem ser negativos");
+        } else {
+
+            while (i <= f) {
+
+                if (i % 2 == 0 || i % 3 == 0 || i % 5 == 0 || i % 7 == 0 || i % 11 == 0 || i % 13 == 0) {
+
+                    qtdNumDiv++;
+
+                    if (i % 2 == 0) {
+                        msg.innerHTML += "O número " + i + " é par. ";
+                    }
+                    if (i % 3 == 0) {
+                        msg.innerHTML += "O número " + i + " é divisível por 3. ";
+                    }
+                    if (i % 5 == 0) {
+                        msg.innerHTML += "O número " + i + " é divisível por 5. ";
+                    }
+                    if (i % 7 == 0) {
+                        msg.innerHTML += "O número " + i + " é divisível por 7. ";
+                    }
+                    if (i % 11 == 0) {
+                        msg.innerHTML += "O número " + i + " é divisível por 11. ";
+                    }
+                    if (i % 13 == 0) {
+                        msg.innerHTML += "O número " + i + " é divisível por 13. ";
+                    }
+                } else {
+                    msg.innerHTML += "O número " + i + " não é divisível pelos principais números primos";
+                }
+                numInter++;
+                msg.innerHTML += "<br>";
+                i++;
+            }
+            msg.innerHTML += "<br> O intervalo de " + inicio + " a " + f + " tem " + numInter + " números, sendo que " +
+                qtdNumDiv + " números são divisíveis por algum número primo.";
+
+        }
+    }
+</script>

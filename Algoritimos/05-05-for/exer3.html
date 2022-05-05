@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amor</title>
+</head>
+<body>
+
+    Entre com o nome de quem você ama
+    <input type="text" name="" id="amor">
+    <br><br>
+    O quanto você ama?
+    <input type="number" name="" id="qtdAmor">
+    <br><br>
+    <button onclick="ame()">Mostrar</button>
+    <br><br>
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+
+    function ame(){
+
+    var am = amor.value;
+    var qtdA = qtdAmor.value;
+
+        for(var i = 1; i <= qtdA; i++){
+
+            msg.innerHTML += "<br> "+ i+ "- "+ am+ ", eu te amo! Sempre lembre disso!";  
+
+
+        }
+
+
+
+
+    }
+
+
+
+
+
+</script>

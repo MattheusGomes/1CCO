@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost, do outra lado da vida</title>
+</head>
+
+<body>
+
+    <h2>Elefantes</h2>
+    Entre com a quantidade de elefantes
+    <input type="number" name="" id="qtdEle">
+    <br><br>
+    <button onclick="elefante()">Atazanar a médium</button>
+    <br><br>
+    <div id="msg"></div>
+</body>
+
+</html>
+
+
+<script>
+    function elefante() {
+
+        var qtdE = qtdEle.value;
+
+        for (var i = 1; i <= qtdE; i++) {
+
+            if (i > 1) {
+                var inco = " ";
+
+                for (var ax = 1; ax <= i; ax++) {
+
+                    inco += "incomodam, ";
+                }
+                msg.innerHTML += i + " elefantes," + inco + " muito mais! <br>";
+
+            }
+            if (i != qtdE) {
+                msg.innerHTML += "1 elefante incomoda muita gente! <br>";
+            }
+        }
+
+
+
+    }
+</script>

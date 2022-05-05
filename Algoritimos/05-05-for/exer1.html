@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 3 - lista 14</title>
+</head>
+<body>
+    
+    Digite uma frase 
+    <input type="text" name="" id="iptMsg">
+    <br><br>
+
+    <button onclick="diga()">Diga algo sobre a quarentena</button>
+    <br><br>
+    <div id="msg"></div>
+
+</body>
+</html>
+
+<script>
+
+    function diga(){
+
+        var text = iptMsg.value;
+
+        for(var i = 1; i<= 7; i++){
+
+            msg.innerHTML += i+ ". "+text+"<br>";
+
+        }
+
+
+
+    }
+
+
+
+</script>

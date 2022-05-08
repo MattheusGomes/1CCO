@@ -11,7 +11,7 @@
 <body>
 
     <button onclick="aperta()">Curto 3 e 5!</button>
-
+    <br><br>
     <div id="msg"></div>
 
 </body>
@@ -27,14 +27,14 @@
 
             if (i % 3 == 0 && i % 5 == 0) {
 
-                msg.innerHTML += i+" <b>É TRI! É PENTA!</b> <br>";
+                msg.innerHTML += i+" - <b>É TRI! É PENTA!</b> <br>";
 
             } else if (i % 3 == 0) {
 
-                msg.innerHTML += i+" É TRI!<br>";
+                msg.innerHTML += i+" - É TRI!<br>";
 
             } else if (i % 5 == 0) {
-                msg.innerHTML += i+" É PENTA!<br>";
+                msg.innerHTML += i+" - É PENTA!<br>";
 
             }else {
                 msg.innerHTML += i +"<br>";

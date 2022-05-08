@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 19</title>
+</head>
+
+<body>
+    <h3>Idade</h3>
+
+    entre com a sua idade
+    <input type="number" name="" id="idade" onkeyup="ver()">
+    <br><br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function ver() {
+        ida = idade.value;
+
+
+        for (i = 0; i <= ida; i++) {
+
+            if (i >= 0 && i <= 4) {
+                msg.innerHTML += i + " anos (Primeira Infância) <br>";
+            } else if (i >= 4 && i <= 6) {
+                msg.innerHTML += i + " anos (Pré-escolar) <br>";
+
+            } else if (i >= 6 && i <= 10) {
+                msg.innerHTML += i + " anos (Segunda Infância) <br>";
+
+            } else if (i >= 10 && i <= 18) {
+                msg.innerHTML += i + " anos (Adolescência) <br>";
+
+            } else if (i >= 18 && i <= 50) {
+                msg.innerHTML += i + " anos (Adulto) <br>";
+
+            } else if (i >= 50 && i <= 100) {
+                msg.innerHTML += i + " anos (Melhor idade) <br>";
+
+            } else if (i >= 100) {
+                msg.innerHTML += i + " anos (Matusalém) <br>";
+
+            }
+        }
+
+    }
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 15- Banco</title>
+</head>
+
+<body>
+
+    Entre com a quantidade de depositos
+    <input type="text" name="" id="qtdDeposito">
+    <br><br>
+    Entre com o valor dos depositos
+    <input type="text" name="" id="valorDep">
+    <br><br>
+    <button onclick="ver()">Acompanhar grana</button>
+    <br><br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function ver() {
+
+        var qtdDep = Number(qtdDeposito.value);
+        var vDep = Number(valorDep.value);
+        var tValor = 0;
+        var pc = 0;
+        for (var i = 1; i <= qtdDep; i++) {
+
+
+            if (i % 3 == 0) {
+
+
+                //burro burro burro.
+
+                /*   pc = (tValor * 1) / 100; */
+                /*     pc = (i * vDep ) * 1 / 100; */
+                /*    pc = ((i * vDep ) * 1) / 100; */
+
+                //o 1 % era do valor total e não do deposito
+
+
+                tValor += vDep;
+                pc = (tValor * 1) / 100;
+                tValor += pc
+
+
+                msg.innerHTML += `${i}° Mês:${tValor.toFixed(2)}<br>`;
+                msg.innerHTML += `${i}° Mês:${pc.toFixed(2)}<br>`;
+
+            } else {
+
+                tValor = tValor + vDep;
+                msg.innerHTML += `${i}° Mês: R$ ${tValor.toFixed(2)} <br>`;
+            }
+        }
+        msg.innerHTML += `Total guardado: R$${tValor.toFixed(2)} <br>`;
+
+
+
+
+
+    }
+</script>

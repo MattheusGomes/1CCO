@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Viagem</title>
+</head>
+
+<body>
+
+            Entre com o destino da viagem
+            <input type="text" name="" id="viag">
+
+            <br><br>
+            <button onclick="cadastro()">viajar</button>
+            <br><br>
+            <button onclick="via1()">Primeira viagem</button>
+            <button onclick="via2()">Terceira viagem</button>
+            <button onclick="via3()">Última viagem</button>
+            <br><br>
+            <div id="msg"></div>
+</body>
+
+</html>
+
+<script>
+            var viagem = [];
+
+            function cadastro(){
+                        var vg = viag.value;
+                        viagem.push(vg);
+                        alert("Viagem cadastrada com sucesso");
+
+            }
+
+            function via1(){
+
+                        if(viagem.length >= 1){
+                                    msg.innerHTML +="<br>"+ viagem[0];
+                        }else {
+                                    msg.innerHTML = "ainda não viajou";
+                        }
+            }
+
+            function via2(){
+     
+                        if(viagem.length >= 3){
+                                    msg.innerHTML +="<br>"+ viagem[2];
+                        }else {
+                                    msg.innerHTML = "ainda não fez a 3ª viagem";
+                        } 
+
+            }
+
+            function via3(){
+   
+                        if(viagem.length >= 1){
+                                    msg.innerHTML +="<br>"+ viagem[viagem.length - 1];
+                        }else {
+                                    msg.innerHTML = "ainda não viajou";
+                        } 
+            }
+
+
+
+
+</script>

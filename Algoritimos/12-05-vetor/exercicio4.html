@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Filmes</title>
+</head>
+<body>
+            Entre com o seus filmes favoritos em ordem
+            <input type="text" name="" id="filme">
+            <br><br>
+            <button onclick="cadastrar()">Cadastrar filme</button>
+            <button onclick="favoritos()">Ver favoritos</button>
+            <br><br>
+            <div id="msg"></div>
+
+
+</body>
+</html>
+
+<script>
+
+            var fav = [];
+            function cadastrar(){
+                        var f = filme.value;
+                        fav.push(f);
+            }
+
+            function favoritos(){
+
+                        msg.innerHTML = "O filme que você mais gosta é :"+fav[0] 
+                        msg.innerHTML += "<br>E desses, o que menos gosta é:"+fav[fav.length - 1] 
+
+
+            }
+
+
+
+</script>

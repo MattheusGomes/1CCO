@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Painel</title>
+</head>
+<body>
+            Entre com o seus filmes favoritos em ordem
+            <input type="text" name="" id="filme">
+            <br><br>
+            <button onclick="cadastrar()">Cadastrar filme</button>
+            <br><br>
+            <div id="msg"></div>
+
+
+</body>
+</html>
+
+<script>
+
+            var fav = [];
+            function cadastrar(){
+                        var f = filme.value;
+                        fav.push(f);
+                        
+
+                        if(fav.length == 1){
+                                    msg.innerHTML += "Seu filme favorito: "+ fav[0]; 
+                    
+                        }else{
+
+                                    if(fav.length >= 3){
+                                                msg.innerHTML += "<br>Seu 3º filme favorito:"+fav[2]; 
+
+                                    }else{
+                                                msg.innerHTML += "<br>o 3° filme ainda não existe";
+                                    }
+                        }
+
+                        if(fav.length >= 0){
+                                    msg.innerHTML += "<br> Total de filmes cadastrados: "+fav.length;
+                        }
+
+
+            }
+
+
+
+</script>

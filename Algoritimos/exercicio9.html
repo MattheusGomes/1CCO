@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos</title>
+</head>
+
+<body>
+
+    Entre com os projetos que você ja realizou
+    <input type="text" name="" id="nomeProjetos">
+    <br><br>
+    <button onclick="cadastro()">Cadastrar Projeto</button>
+    <button onclick="mostrar()">Mostrar Projetos</button>
+    <br><br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    var proj = [];
+   
+
+    function cadastro() {
+
+        var nome = nomeProjetos.value;
+        proj.push(nome);
+
+        if (proj.length >= 0 && proj.length <= 4) {
+            msg.innerHTML += "<br> Você fez " + proj.length + " projetos seu nivel é Júnior"
+        } else if (proj.length >= 5 && proj.length <= 12) {
+            msg.innerHTML += "<br> Você fez " + proj.length + " projetos seu nivel é Pleno "
+
+        } else if (proj.length > 12) {
+            msg.innerHTML += "<br> Você fez " + proj.length + " projetos seu nivel é Sênior "
+
+        }
+
+
+
+    }
+   
+    function mostrar() {
+
+        for(var i = 1; i <= proj.length; i++ ){
+            msg.innerHTML += "<br>"+ proj[proj.length - i];
+        }
+    
+
+    }
+</script>

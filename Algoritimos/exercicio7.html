@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes</title>
+</head>
+
+<body>
+
+    Entre com os filmes que voce mais gosta
+    <input type="text" name="" id="filmes">
+    <br><br>
+    <button onclick="cad()">Cadastrar</button>
+    <br><br>
+    <div id="msg" style="color: blue;"></div>
+</body>
+
+</html>
+
+<script>
+    lista = [];
+    var i = 1;
+    function cad() {
+
+        var fil = filmes.value;
+        lista.push(fil);
+
+
+
+        for (; i <= lista.length; i++) {
+
+            if (i % 2 == 0) {
+                msg.innerHTML += "<br> <div style='color: blue';> " + lista[lista.length - 1] + "</div>";
+            } else {
+                msg.innerHTML += "<br> <div style='color: red';> " + lista[lista.length - 1] + "</div>";
+
+            }
+
+            }
+
+
+    }
+</script>

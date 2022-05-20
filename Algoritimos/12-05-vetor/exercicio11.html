@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+</head>
+
+<body>
+
+    Entre com o preço do produto
+    <input type="text" name="" id="preco">
+
+    <button onclick="cadastro()">cadastro</button>
+    <button onclick="atualizar()">atualizar</button>
+    <br><br>
+
+    <div id="msg"></div>
+</body>
+
+</html>
+
+<script>
+    var listaV = [];
+
+    function cadastro() {
+        var pr = preco.value;
+        listaV.push(pr);
+        alert("Cadastro feito com suscesso");
+    }
+
+    function atualizar() {
+
+        var valor = 0;
+        for (var i = 0; i < listaV.length; i++) {
+            valor += Number(listaV[i]);
+        }
+
+        msg.innerHTML += "<br>Você tem " + listaV.length + " produtos cadastrados em estoque";
+        msg.innerHTML += "<br> Seu estoque vale R$" + valor.toFixed(2);
+
+    }
+</script>

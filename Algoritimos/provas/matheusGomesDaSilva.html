@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC3_1CCO</title>
+</head>
+
+<body>
+    <h2>Hideo Morangos</h2>
+    Entre com a temperatura da estufa: <input id="ipt_temp">
+    <button onclick="cadastrar()">Registrar</button> <br><br>
+
+    Entre com o número de uma ocorrência: <input id="ipt_ocor">
+    <button onclick="verificar()">Verificar</button> <br>
+    <div id="div_ocor"></div><br><br>
+
+    Intervalo de ocorrências para análise
+    <input id="ipt_ocor_de"> <input id="ipt_ocor_ate">
+    <button onclick="ocorrencias()">Analisar Ocorrências</button> <br>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    var vTemperaturas = [10,30,20,15,25,20,20,20,20,20,20,20];
+
+    function cadastrar() {
+        var temperatura = Number(ipt_temp.value);
+
+        if (temperatura < 10) {
+            alert("Ligar urgente os aquecedores");
+        } else if (temperatura >= 15 && temperatura <= 25) {
+
+            alert("Perfeito!!! Temperatura dentro do intervalo ideal");
+            vTemperaturas.push(temperatura);
+            ipt_temp.value = " ";
+        } else if (temperatura > 30) {
+            alert("Ligar urgente os resfriadores");
+        } else {
+            vTemperaturas.push(temperatura);
+            ipt_temp.value = " ";
+        }
+    }
+
+    function verificar() {
+        var ocorrencias = Number(ipt_ocor.value);
+
+        if(vTemperaturas.length > 0){
+            
+            if (ocorrencias > vTemperaturas.length) {
+                div_ocor.innerHTML = `A ocorrência ${ocorrencias} não foi registrada`;
+            } else if (ocorrencias <= 0) {
+                div_ocor.innerHTML = `Entre com uma ocorrencia valida`;
+            } else {
+                div_ocor.innerHTML =
+                    `Na ocorrência ${ocorrencias} a temperatura registrada é ${vTemperaturas[ocorrencias-1]}`;
+            }
+        }else{
+            alert("Antes de Analisar faça o cadastro das temperaturas");
+        }
+    }
+
+    function ocorrencias() {
+        var intervaloInicial = Number(ipt_ocor_de.value);
+        var intervaloFinal = Number(ipt_ocor_ate.value);
+        var menor = 34;
+        var maior = 0;
+        var numOcorrencia = 0;
+        var somaTemp = 0;
+        var media = 0;
+
+        if (vTemperaturas.length > 0) {
+
+            if (intervaloFinal > intervaloInicial) {
+
+                for (var i = 0; i <= vTemperaturas.length; i++) {
+
+                    if (i >= intervaloInicial && i <= intervaloFinal) {
+
+                        if (maior < vTemperaturas[i]) {
+                            maior = vTemperaturas[i-1];
+                        }
+                        if (menor > vTemperaturas[i]) {
+                            menor = vTemperaturas[i];
+                        }
+                        numOcorrencia++;
+                        somaTemp += vTemperaturas[i - 1];
+
+                        div_msg.innerHTML +=
+                            `<br><br> “A ${i} ª ocorrência tem registrada a temperatura ${vTemperaturas[i -1]}`
+                    }
+
+                }
+
+                media = somaTemp / numOcorrencia;
+
+                div_msg.innerHTML += `<br><br> Inicial: ${intervaloInicial} Final: ${intervaloFinal}`
+
+                div_msg.innerHTML +=
+                    `<br>Menor Temperatura do intervalo: ${menor.toFixed(1)} <br> 
+                    Maior Temperatura do intervalo: ${maior.toFixed(1)}`
+
+                div_msg.innerHTML += `<br>Qtde de temperaturas cadastradas no intervalo: ${numOcorrencia} <br>
+                       Média das Temperaturas do intervalo: ${media.toFixed(1)}`
+
+            } else {
+                alert("Informar o intervalo de ocorrências corretamente");
+            }
+
+        } else {
+            alert("Antes de Analisar faça o cadastro das temperaturas");
+        }
+
+
+    }       
+</script>
